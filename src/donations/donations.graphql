@@ -27,8 +27,13 @@ input CreateDonationInput {
 #   id: Int!
 # }
 
+export class OrderByParams {
+  field?: Nullable<string>
+  direction?: Nullable<string>
+}
+
 type Query {
-  donations: [Donation]!
+  donations(orderBy: OrderByParams): [Donation]!
   donation(id: Int!): Donation
 }
 
